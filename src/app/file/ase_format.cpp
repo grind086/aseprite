@@ -388,7 +388,7 @@ bool AseFormat::onSave(FileOp* fop)
 
   bool require_new_palette_chunk = false;
   for (Palette* pal : sprite->getPalettes()) {
-    if (pal->size() > 256 || pal->hasAlpha()) {
+    if (pal->size() == 0 || pal->size() > 256 || pal->hasAlpha()) {
       require_new_palette_chunk = true;
       break;
     }
